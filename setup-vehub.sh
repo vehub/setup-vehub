@@ -15,14 +15,12 @@ echo $LATEST_VERSION | jq '{title: .title, version: .version}'
 
 URL=$(echo $LATEST_VERSION | jq -r '.url  | fromjson | .downloadAction' | head -n 1)
 
-echo "Downloading from $URL..."
-
-curl -L "https://vector.com$URL" \
+curl -s -L "https://vector.com$URL" \
          -H 'content-type: application/json' \
          -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) Chrome/115.0.5790.102' -o cli.zip
 
 echo "Extracting veHub CLI..."
-unzip cli.zip -d cli
+unzip -q cli.zip -d cli
 
 # Make the binary executable
 chmod +x cli/vehub
