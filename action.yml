@@ -1,0 +1,11 @@
+name: 'Setup veHub'
+description: 'This action sets up the veHub CLI by downloading the latest version.'
+author: 'Vector Informatik GmbH'
+
+runs:
+    using: composite
+    steps:
+        - name: Greet and Record Time  # name of step
+          id: greet
+          run: ${{ github.action_path }}/setup-vehub.sh
+          shell: bash

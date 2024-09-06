@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+  schedule:
+    - cron: "0 */3 * * *"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup veHub
+        uses: ./
+
+      - name: Check installation
+        shell: bash
+        run: |
+          vehub --version
