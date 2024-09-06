@@ -1,5 +1,7 @@
 # setup-vehub
 
+You can find more details About veHub on https://vehub.vector.com/docs/
+
 This action sets up the veHub CLI to be used in subsequent steps in your workflow.
 
 You can find more details on how to use the CLI here: [vehub.vector.com/docs/cli/](https://vehub.vector.com/docs/cli/).
