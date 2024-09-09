@@ -20,7 +20,24 @@ curl -s -L "https://vector.com$URL" \
          -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) Chrome/115.0.5790.102' -o cli.zip
 
 echo "Extracting veHub CLI..."
+set +e
 unzip -q cli.zip -d cli
+UNZIP_STATUS=$?
+set -e
+
+# Debugging information in case of failure
+if [ $UNZIP_STATUS -ne 0 ]; then
+    echo "Error: Failed to unzip the cli.zip file."
+    # Show file size
+    echo "File size of cli.zip:"
+    stat cli.zip
+
+    # Show hex dump of the first few bytes
+    echo "Hex dump of cli.zip content (first 256 bytes):"
+    xxd -l 256 cli.zip
+
+    exit 1
+fi
 
 # Make the binary executable
 chmod +x cli/vehub
