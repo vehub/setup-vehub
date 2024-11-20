@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-sudo echo "deb [trusted=yes] https://packages.vehub.vector.com/apt generic vehub" > /etc/apt/sources.list.d/vehub.list
+echo "deb [trusted=yes] https://packages.vehub.vector.com/apt generic vehub" > /etc/apt/sources.list.d/vehub.list
 apt-get update
 apt-get install -y vehub
 
