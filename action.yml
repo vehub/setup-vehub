@@ -7,5 +7,5 @@ runs:
     steps:
         - name: Greet and Record Time  # name of step
           id: greet
-          run: ${{ github.action_path }}/setup-vehub.sh
+          run: sudo ${{ github.action_path }}/setup-vehub.sh
           shell: bash
