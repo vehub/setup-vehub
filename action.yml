@@ -5,7 +5,6 @@ author: 'Vector Informatik GmbH'
 runs:
     using: composite
     steps:
-        - name: Greet and Record Time  # name of step
-          id: greet
+        - name: Install veHub CLI
           run: sudo ${{ github.action_path }}/setup-vehub.sh
           shell: bash
