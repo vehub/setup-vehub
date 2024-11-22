@@ -5,6 +5,12 @@ author: 'Vector Informatik GmbH'
 runs:
     using: composite
     steps:
-        - name: Install veHub CLI
+        - name: Install veHub CLI on Linux
+          if: runner.os == 'Linux'
           run: sudo ${{ github.action_path }}/setup-vehub.sh
           shell: bash
+
+        - name: Install veHub CLI on Windows
+          if: runner.os == 'Windows'
+          run: ${{ github.action_path }}\\setup-vehub.ps1
+          shell: pwsh
