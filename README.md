@@ -27,5 +27,5 @@ steps:
 
 ## Limitations
 
-The action is currently supported on Linux runners. 
-However, the CLI is also available for other platforms. When you need support for Windows or macOS, you can open a ticket.
+The action is currently supported on Linux and Windows runners. 
+However, the CLI is also available for macOS. Open a ticket if you need support for this.
