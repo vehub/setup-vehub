@@ -2,7 +2,7 @@
 set -e
 
 wget -O - https://packages.vehub.vector.com/apt/vector-pkg.key | sudo gpg --dearmor -o /usr/share/keyrings/vector-pkg.gpg && \
-echo "deb [signed-by=/usr/share/keyrings/vector-pkg.gpg] https://packages.vehub.vector.com/apt generic vehub" | sudo tee /etc/apt/sources.list.d/vehub.list
+echo "deb [signed-by=/usr/share/keyrings/vector-pkg.gpg] https://packages.vehub.vector.com/apt generic non-free" | sudo tee /etc/apt/sources.list.d/vehub.list
 
 apt-get update
 apt-get install -y vehub
